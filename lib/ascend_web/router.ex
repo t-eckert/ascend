@@ -18,6 +18,10 @@ defmodule AscendWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/hello", PageController, :index
+    get "/hello/:messenger", PageController, :show
+    resources "/users", UserController
+    resources "/routes", RouteController
   end
 
   # Other scopes may use custom stacks.
